@@ -1,0 +1,27 @@
+{
+  "name": "songsfy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./model/src/server.js",
+    "dev": "nodemon ./model/src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SavioSoares7/songsFy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SavioSoares7/songsFy/issues"
+  },
+  "homepage": "https://github.com/SavioSoares7/songsFy#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
