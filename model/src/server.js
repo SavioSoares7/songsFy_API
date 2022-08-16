@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+const database = require("../database/sqlite/migration/");
+database();
+
 const routes = require("../routes/index");
 
 app.use(express.json());
