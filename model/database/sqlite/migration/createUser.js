@@ -1,4 +1,4 @@
-const user = `
+const singer = `
   CREATE TABLE IF NOT EXISTS singers(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR,
@@ -9,4 +9,4 @@ const user = `
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
   )
 `;
-module.exports = user;
+module.exports = singer;
