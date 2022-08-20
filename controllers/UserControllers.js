@@ -71,9 +71,46 @@ class UserControllers {
   }
   async read(req, res) {
     const database = await sqliteConnection();
-    const music = await database.all("SELECT * FROM music");
+    const allMusic = await database.all("SELECT * FROM music");
 
-    res.json({ music });
+    const { name_music, name_singer } = req.query;
+
+    if (name_music) {
+      const musics = await database.all(`
+        SELECT * FROM music WHERE song LIKE '%${name_music}%'
+      `);
+      return res.json(musics);
+    }
+
+    if (name_singer) {
+      const singer = await database.get(
+        `SELECT id FROM singers WHERE name like '%${name_singer}%' `
+      );
+      if (singer) {
+        const musics = await database.all(
+          `
+        SELECT * FROM music WHERE id_singer = (?)
+      `,
+          [singer.id]
+        );
+        return res.json(musics);
+      }
+
+      const nickName = await database.get(
+        `SELECT id FROM singers WHERE nickname like '%${name_singer}%'`
+      );
+      if (nickName) {
+        const musics = await database.all(
+          `
+          SELECT * FROM music WHERE id_singer = (?)
+        `,
+          [nickName.id]
+        );
+        return res.json(musics);
+      }
+    }
+
+    res.json({ allMusic });
   }
 }
 module.exports = UserControllers;
