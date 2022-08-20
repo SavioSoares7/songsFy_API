@@ -60,6 +60,17 @@ class MusicControllers {
 
     res.json();
   }
+  async read(req, res) {
+    const database = await sqlConnection();
+
+    const { singer_id } = req.query;
+
+    let music = await database.all("SELECT * FROM music WHERE id_singer = ?", [
+      singer_id,
+    ]);
+
+    res.json({ music });
+  }
 }
 
 module.exports = MusicControllers;

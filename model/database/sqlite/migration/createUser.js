@@ -1,12 +1,10 @@
-const singer = `
-  CREATE TABLE IF NOT EXISTS singers(
+const user = `;
+  CREATE TABLE IF NOT EXISTS users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR,
-    nickname VARCHAR,
     email VARCHAR,
     password VARCHAR,
-    avatar VARCHAR null,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   )
 `;
-module.exports = singer;
+module.exports = user;
