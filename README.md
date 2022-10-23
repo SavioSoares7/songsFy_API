@@ -3,7 +3,7 @@
 
 Olá, esse foi um projeto desenvolvido baseado no Spotify.
 
-Tendo basicamente 3 rotas principais uma de cadastro de usuário, cadastro de musicas e cadastros de cantor.
+Tendo basicamente 3 rotas principais uma de usuário, de musicas e  de cantor.
 
 
 ## Funcionalidades
