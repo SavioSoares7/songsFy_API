@@ -6,8 +6,10 @@ Olá, esse foi um projeto desenvolvido baseado no Spotify.
 Tendo basicamente 3 rotas principais uma de usuário, de musicas e  de cantor.
 
 
-## Funcionalidades
+## Banco de dados
+- Foi usado o banco de dados SQLITE e o driver do SQLITE3
 
+## Funcionalidades
 ## Rota de usuários
 - Cadastro de usuários
 - Atualização de cadastros
